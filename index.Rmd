@@ -11,7 +11,8 @@ output: html_document
 rm(list=ls())
 
 # set your working directory here
-WD <- '/Users/brianabelson/enigma/public/smoke-alarm-risk'
+HOME_DIR <- Sys.getenv("HOME")
+WD <- paste0(HOME_DIR, '/smoke-signals-model')
 setwd(WD)
 
 # set where you want the model output to go here
@@ -20,6 +21,7 @@ require(reshape2)
 require(bigrf)
 require(scales)
 require(knitr)
+require(devtools)
 
 # knitr options
 opts_chunk$set(
